@@ -1,0 +1,44 @@
+tasks = []  # stack
+
+while True:
+    print("\n--- Urgent Task Stack ---")
+    print("1. Add Task")
+    print("2. Remove Task")
+    print("3. View Top Task")
+    print("4. Display All Tasks")
+    print("5. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        task = input("Enter task: ")
+        tasks.append(task)
+        print("Task added:", task)
+
+    elif choice == "2":
+        if tasks:
+            removed = tasks.pop()
+            print("Task removed:", removed)
+        else:
+            print("Stack is empty!")
+
+    elif choice == "3":
+        if tasks:
+            print("Top task:", tasks[-1])
+        else:
+            print("Stack is empty!")
+
+    elif choice == "4":
+        if tasks:
+            print("All tasks:")
+            for t in tasks:
+                print("-", t)
+        else:
+            print("Stack is empty!")
+
+    elif choice == "5":
+        print("Exiting...")
+        break
+
+    else:
+        print("Invalid choice!")
